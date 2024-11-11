@@ -1,0 +1,65 @@
+/* CoachProfileTable.css */
+
+/* Container for the table */
+.profile-table-container {
+    width: 90%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+  }
+  
+  /* Table Styling */
+  .profile-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+  }
+  
+  /* Table headers */
+  .profile-table th {
+    background-color: #021403;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-size: 1.1em;
+  }
+  
+  /* Table cells */
+  .profile-table td {
+    border: 1px solid #0c0909;
+    padding: 10px;
+    text-align: left;
+    font-size: 1em;
+    color: #333;
+  }
+  
+  /* Row Hover Effect */
+  .profile-table tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Alternate row colors */
+  .profile-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Table Heading */
+  h2 {
+    text-align: center;
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  /* Responsive Design for Small Screens */
+  @media (max-width: 768px) {
+    .profile-table {
+      width: 100%;
+      font-size: 0.9em;
+    }
+  
+    .profile-table th, .profile-table td {
+      padding: 8px;
+    }
+  }
+  

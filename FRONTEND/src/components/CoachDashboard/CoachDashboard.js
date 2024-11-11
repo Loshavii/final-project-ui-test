@@ -41,6 +41,12 @@ const CoachDashboard = () => {
     }
   };
 
+  const UserDetails = () => {
+    if (coach && coach.email) {
+      navigate(`/UserDetails/${coach.email}`); // Navigate to ProfileCard page with email
+    }
+  };
+
   return (
     <div className="dashboard-container">
       <aside className="sidebar">
@@ -55,7 +61,8 @@ const CoachDashboard = () => {
         </div>
         <nav className="nav-links">
           <a href="/dashboard" className="active">Dashboard</a>
-          <a href="/members">My Members</a>
+          {/* <a href="/UserDetails/${coach.email}">My Members</a> */}
+          <button className="btn take-assessment" onClick={UserDetails}>View Requests</button>
         </nav>
       </aside>
       <main className="main-content">
