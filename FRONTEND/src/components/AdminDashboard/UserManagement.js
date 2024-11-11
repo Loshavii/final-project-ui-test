@@ -67,7 +67,7 @@ const UserManagement = () => {
                     <div className="avatar01">
                       <FaUser />
                     </div>
-                    {`${User.firstName} ${User.lastName}`}
+                    {`${User.username}`}
                   </div>
                 </td>
                 <td className="table-cell">{User.email}</td>

@@ -42,7 +42,7 @@ function AdminDashboard() {
           <div className="grid-item">
             <h3>Activites</h3>
             <p>Explore a collection of reference applications.</p>
-            <a href="#">Explore →</a>
+            <a href="/admin/activity">Explore →</a>
           </div>
           <div className="grid-item">
             <h3>Community</h3>

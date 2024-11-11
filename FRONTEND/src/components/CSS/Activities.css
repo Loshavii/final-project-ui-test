@@ -1,0 +1,36 @@
+.table-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .combined-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .combined-data-table th,
+  .combined-data-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .combined-data-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .combined-data-table td {
+    text-align: center;
+  }
+  
+  .combined-data-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .combined-data-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  

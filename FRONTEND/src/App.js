@@ -19,6 +19,8 @@ import CoachPro from './components/CoachDashboard/CoachProfile'; // Import Coach
 import UserDashboard from './components/UserDashboard/UserDashboard';
 import ProfileCard from '../src/components/UserDashboard/ProfileCard';
 import Payment from '../src/components/UserDashboard/Payment';
+import { Activity } from 'lucide-react';
+import  Activities from '../src/components/AdminDashboard/Activities';
 
 function App() {
   return (
@@ -38,6 +40,8 @@ function App() {
           <Route path="/loginuser" element={<Loginuser />} />
           <Route path="/coach-dashboard" element={<CoachDashboard />} />
           <Route path="/admin/users" element={<UserManagement />} />
+          <Route path="/admin/activity" element={<Activities />} />
+
           {/* Add CoachProfile route */}
           <Route path="/coach-profile" element={<CoachPro />} />
           <Route path="/user-dashboard" element={<UserDashboard />} />
