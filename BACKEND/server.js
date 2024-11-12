@@ -46,6 +46,8 @@ const coachRoutes = require('../BACKEND/routes/coach'); // Existing coach routes
 const adminRoutes = require('./routes/admin'); // Existing admin routes for managing coaches
 const coachProfileRoutes = require('./routes/coachProfile'); // Existing coach profile routes
 const profileRoutes = require('./routes/userProfile'); // New profile setup routes for user data
+const messageRoutes = require('./routes/message.js');
+
 require('dotenv').config();
 const cors = require('cors');
 
@@ -81,6 +83,8 @@ app.use('/api/admin', adminRoutes); // Admin route for managing coach requests (
 app.use('/api/coachesProfiles', coachProfileRoutes); // Route for coach profile management
 app.use('/api/profiles', profileRoutes); // Route for handling profile setup (new)
 app.use('/api/payments', paymentRoutes);
+app.use('/api/messages', messageRoutes);
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

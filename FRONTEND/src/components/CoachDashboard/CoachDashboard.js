@@ -47,6 +47,11 @@ const CoachDashboard = () => {
     }
   };
 
+  const handleClick = () => {
+    window.location.href = 'https://live-streaming-app-delta.vercel.app/';
+  };
+  
+
   return (
     <div className="dashboard-container">
       <aside className="sidebar">
@@ -56,6 +61,7 @@ const CoachDashboard = () => {
               <img src="profile-pic-url" alt="Profile" className="profile-pic" />
               <h3>{`${coach.firstName} ${coach.lastName}`}</h3>
               <p>{coach.email}</p>
+              
             </>
           )}
         </div>
@@ -63,6 +69,7 @@ const CoachDashboard = () => {
           <a href="/dashboard" className="active">Dashboard</a>
           {/* <a href="/UserDetails/${coach.email}">My Members</a> */}
           <button className="btn take-assessment" onClick={UserDetails}>View Requests</button>
+          <button className="btn take-assessment " onClick={handleClick}>join Video chat</button>
         </nav>
       </aside>
       <main className="main-content">

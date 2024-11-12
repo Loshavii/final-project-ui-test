@@ -1,4 +1,4 @@
-/* 
+ /* 
 .register-user-container {
     display: flex;
     justify-content: center;
@@ -119,6 +119,13 @@
 
 
 
+
+
+
+
+
+/*
+
 .register-page {
   display: flex;
   min-height: 90vh;
@@ -126,7 +133,6 @@
   background-size: 300% 300%;
   animation: gradient-shift 15s ease infinite;
 }
-/* Gradient Animation */
 @keyframes gradient-shift {
   0% {
     background-position: 0% 50%;
@@ -159,7 +165,6 @@
   transition: all 0.3s ease;
 }
 
-/* Welcome Text */
 .welcome-text h1,
 .welcome-text p {
   color: white;
@@ -201,7 +206,7 @@
   align-items: center;
   justify-content: center;
 }
-/* Orbit Animation for Avatar */
+
 .orbit-dot {
   width: 12px;
   height: 12px;
@@ -222,7 +227,6 @@
     transform: rotate(360deg) translateX(60px) rotate(-360deg);
   }
 }
-/* Form Group Styling */
 .form-group2 {
   margin-bottom: 1rem;
   position: relative;
@@ -254,7 +258,7 @@
 
 .register-input {
   width: 100%;
-  padding: 0.75rem 0.75rem 0.75rem 40px; /* Space near icon */
+  padding: 0.75rem 0.75rem 0.75rem 40px; 
   background: transparent;
   border: none;
   outline: none;
@@ -268,7 +272,7 @@
 .register-submit-button {
   width: 100%;
   padding: 0.75rem;
-  background: linear-gradient(to right, #3b82f6, #9333ea); /* Gradient color */
+  background: linear-gradient(to right, #3b82f6, #9333ea); 
   color: white;
   border-radius: 8px;
   font-weight: bold;
@@ -284,14 +288,14 @@
 }
 
 .register-submit-button:hover {
-  background: linear-gradient(to right, #9333ea, #3b82f6); /* Reversed gradient */
+  background: linear-gradient(to right, #9333ea, #3b82f6);
   transform: scale(1.05);}
 
   .register-submit-button.loading {
     cursor: not-allowed;
     opacity: 0.8;
   }
-/* Gradient Animation */
+
 @keyframes gradient-shift {
   0%,
   100% {
@@ -330,7 +334,7 @@
   animation: float 6s infinite ease-in-out, circle-move 10s linear infinite;
 }
 
-/* Define `circle-move` for smooth, circular movements */
+
 @keyframes circle-move {
   0% {
     transform: translate(0, 0);
@@ -396,7 +400,7 @@
 .login-button {
   width: 30%;
   padding: 0.35rem 1rem;
-  background: linear-gradient(to right, #3b82f6, #9333ea); /* Gradient color */
+  background: linear-gradient(to right, #3b82f6, #9333ea); 
   color: white;
   font-size: 1rem;
   font-weight: bold;
@@ -410,13 +414,13 @@
   transition: background 0.3s, transform 0.2s;
 }
 .login-button:hover {
-  background: linear-gradient(to right, #9333ea, #3b82f6); /* Reversed gradient */
-  transform: scale(1.05); /* Slight enlargement on hover */
+  background: linear-gradient(to right, #9333ea, #3b82f6); 
+  transform: scale(1.05); 
 }
 
 .login-button:active {
-  transform: scale(0.98); /* Slight shrink on click */
-  background: linear-gradient(to right, #3b82f6, #6b21a8); /* Darkened gradient */
+  transform: scale(0.98);
+  background: linear-gradient(to right, #3b82f6, #6b21a8);
 }
 
 .login-button.loading {
@@ -428,7 +432,315 @@
   margin-top: 1rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* Space between text and button */
+  gap: 0.5rem; 
   font-size: 1rem;
-  color: #ffffff; /* Text color */
+  color: #ffffff; 
+} */
+
+
+
+
+
+
+
+/* new css */
+.register-page {
+  display: flex;
+  min-height: 90vh;
+  background: #111827; 
+  background-size: 300% 300%;
 }
+
+.register-form-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.register-form {
+  font-size: 0.9rem;
+  max-width: 400px;
+  padding: 2rem;
+  background: rgba(31, 41, 55, 0.5); 
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  border: 1px solid #374151; 
+}
+
+.register-form:hover {
+  background: rgba(55, 65, 81, 0.4); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-text h1,
+.welcome-text p {
+  color: #FFFFFF; 
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.avatar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+
+.avatar-icon {
+  color: #FFFFFF;
+  font-size: 1.5rem;
+}
+
+.avatar-gradient {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #10B981, rgba(16, 185, 129, 0.2)); 
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-inner {
+  width: 100%;
+  height: 100%;
+  background: rgba(31, 41, 55, 0.5); 
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.orbit-dot {
+  width: 12px;
+  height: 12px;
+  background: #10B981;
+  border-radius: 50%;
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbit 4s linear infinite;
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(60px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(60px) rotate(-360deg);
+  }
+}
+
+.form-group2 {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.input-wrapper2 {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  border: 1px solid #374151; 
+  border-radius: 8px;
+  background: rgba(55, 65, 81, 0.3); 
+  transition: border 0.2s;
+}
+
+.input-wrapper2:focus-within {
+  border-color: #10B981;
+}
+
+.input-icon2 {
+  position: absolute;
+  left: 12px;
+  color: #9CA3AF; 
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+.register-input {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #FFFFFF; 
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+.register-input1::placeholder {
+  color: #9CA3AF;
+}
+
+.register-submit-button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #10B981; 
+  color: #FFFFFF;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  margin-top: 1rem;
+}
+
+.register-submit-button:hover {
+  background: #059669; 
+  transform: scale(1.05);
+}
+
+.register-submit-button.loading {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.illustration {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.circles-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.1); 
+  animation: float 6s infinite ease-in-out, circle-move 10s linear infinite;
+}
+
+@keyframes circle-move {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(100px, -100px);
+  }
+  50% {
+    transform: translate(0, -200px);
+  }
+  75% {
+    transform: translate(-100px, -100px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.illustration-content {
+  z-index: 2;
+  text-align: center;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.feature-card {
+  background: rgba(31, 41, 55, 0.5); 
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s;
+  border: 1px solid #374151;
+}
+
+.feature-card:hover {
+  transform: scale(1.05);
+  background: rgba(55, 65, 81, 0.4); 
+}
+
+.feature-icon {
+  color: #10B981; 
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.have-account {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: #D1D5DB; 
+}
+
+.login-button {
+  width: 30%;
+  padding: 0.35rem 1rem;
+  background: #10B981;
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.login-button:hover {
+  background: #059669; 
+  transform: scale(1.05);
+}
+
+.login-button:active {
+  transform: scale(0.98);
+  background: rgba(16, 185, 129, 0.2); 
+}
+
+.login-button.loading {
+  cursor: not-allowed;
+  opacity: 0.8;
+} 

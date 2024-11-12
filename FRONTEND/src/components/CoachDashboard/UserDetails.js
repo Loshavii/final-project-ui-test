@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import "../CSS/UserDetails.css";
 
-const CoachProfileTable = ({ coachEmail }) => {
+const CoachProfileTable = () => {
   const [profiles, setProfiles] = useState([]);
+  
+  // Retrieve coachEmail from session storage
+  const coachEmail = sessionStorage.getItem("coachEmail");
 
   useEffect(() => {
     const fetchProfiles = async () => {

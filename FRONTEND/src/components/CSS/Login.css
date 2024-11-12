@@ -78,8 +78,8 @@ body {
 
 
 
-/* Page Layout */
-.login-page {
+
+ .login-page {
   display: flex;
   min-height: 90vh;
   background: linear-gradient(to bottom right, #4c1d95, #a167a1, #3b82f6);
@@ -87,7 +87,6 @@ body {
   animation: gradient-shift1 15s ease infinite;
 }
 
-/* Gradient Animation */
 @keyframes gradient-shift1 {
   0% {
     background-position: 0% 50%;
@@ -100,7 +99,6 @@ body {
   }
 }
 
-/* Form Container */
 .login-form-container {
   flex: 1;
   display: flex;
@@ -123,7 +121,6 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Welcome Text */
 .welcome-text h1,
 .welcome-text p {
   color: white;
@@ -131,7 +128,6 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* Avatar Icon */
 .avatar {
   position: relative;
   display: flex;
@@ -169,7 +165,6 @@ body {
   justify-content: center;
 }
 
-/* Orbit Animation for Avatar */
 .orbit-dot {
   width: 12px;
   height: 12px;
@@ -191,7 +186,6 @@ body {
   }
 }
 
-/* Form Group Styling */
 .form-group1 {
   margin-bottom: 1rem;
   position: relative;
@@ -212,7 +206,6 @@ body {
   border-color: #4c1d95;
 }
 
-/* Icon Positioning */
 .input-icon1 {
   position: absolute;
   left: 12px;
@@ -221,10 +214,9 @@ body {
   pointer-events: none;
 }
 
-/* Input Field Styling */
 .login-input1 {
   width: 100%;
-  padding: 0.75rem 0.75rem 0.75rem 40px; /* Space near icon */
+  padding: 0.75rem 0.75rem 0.75rem 40px; 
   background: transparent;
   border: none;
   outline: none;
@@ -237,11 +229,10 @@ body {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* Submit Button Styling */
 .login-submit-button {
   width: 100%;
   padding: 0.75rem;
-  background: linear-gradient(to right, #3b82f6, #9333ea); /* Gradient color */
+  background: linear-gradient(to right, #3b82f6, #9333ea); 
   color: white;
   border-radius: 8px;
   font-weight: bold;
@@ -257,15 +248,14 @@ body {
 }
 
 .login-submit-button:hover {
-  background: linear-gradient(to right, #9333ea, #3b82f6); /* Reversed gradient */
-  transform: scale(1.05); /* Slight enlargement on hover */}
+  background: linear-gradient(to right, #9333ea, #3b82f6); 
+  transform: scale(1.05); }
 
 .login-submit-button.loading {
   cursor: not-allowed;
   opacity: 0.8;
 }
 
-/* Gradient Animation */
 @keyframes gradient-shift {
   0%,
   100% {
@@ -276,7 +266,6 @@ body {
   }
 }
 
-/* Illustration Section */
 .illustration {
   flex: 1;
   position: relative;
@@ -325,7 +314,7 @@ body {
 .create-account-button {
   width: 30%;
   padding: 0.35rem 1rem;
-  background: linear-gradient(to right, #3b82f6, #9333ea); /* Gradient color */
+  background: linear-gradient(to right, #3b82f6, #9333ea); 
   color: white;
   font-size: 1rem;
   font-weight: bold;
@@ -340,14 +329,13 @@ body {
 }
 
 .create-account-button:hover {
-  background: linear-gradient(to right, #9333ea, #3b82f6); /* Reversed gradient */
-  transform: scale(1.05); /* Slight enlargement on hover */
+  background: linear-gradient(to right, #9333ea, #3b82f6); 
+  transform: scale(1.05); 
 }
 
 .create-account-button:active {
-  transform: scale(0.98); /* Slight shrink on click */
-  background: linear-gradient(to right, #3b82f6, #6b21a8); /* Darkened gradient */
-}
+  transform: scale(0.98); 
+  background: linear-gradient(to right, #3b82f6, #6b21a8); }
 
 .create-account-button.loading {
   cursor: not-allowed;
@@ -357,7 +345,7 @@ body {
   margin-top: 1rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* Space between text and button */
+  gap: 0.5rem; 
   font-size: 1rem;
-  color: #ffffff; /* Text color */
-}
+  color: #ffffff; 
+} 

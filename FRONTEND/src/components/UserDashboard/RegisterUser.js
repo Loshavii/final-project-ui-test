@@ -172,7 +172,9 @@ const RegisterPage = () => {
             {[
               { icon: Shield, title: "Account Protection", desc: "Secure registration process" },
               { icon: Edit3, title: "Personalized Profile", desc: "Customize your experience" },
+              { icon: User, title: "Community Access", desc: "Connect with others" },
               { icon: User, title: "Community Access", desc: "Connect with others" }
+
             ].map((feature, index) => (
               <div key={index} className="feature-card" style={{ animationDelay: `${index * 0.1}s` }}>
                 <feature.icon className="feature-icon" />
