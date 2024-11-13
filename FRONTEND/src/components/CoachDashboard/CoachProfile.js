@@ -5,7 +5,7 @@ import '../CSS/CoachProfile.css'; // Import your CSS
 
 const CoachProfile = () => {
   const [profile, setProfile] = useState({
-    fullName: '',
+    username: '',
     nickName: '',
     gender: '',
     age: '',
@@ -37,7 +37,7 @@ const CoachProfile = () => {
           const coachData = response.data;
           setCoach(coachData); // Store the fetched coach data
           setProfile({
-            fullName: `${coachData.firstName} ${coachData.lastName}`, // Assuming firstName and lastName are in the API response
+            fullName: `${coachData.username}`, // Assuming firstName and lastName are in the API response
             nickName: coachData.nickName || '',
             gender: coachData.gender || '',
             age: coachData.age || '',

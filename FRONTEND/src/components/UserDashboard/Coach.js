@@ -1,47 +1,4 @@
 
-// import React, { useEffect, useState } from 'react';
-// import '../CSS/Coach.css';
-// import { Link } from 'react-router-dom';
-// import axios from 'axios';
-
-// const Coach = () => {
-//   const [coaches, setCoaches] = useState([]);
-
-//   useEffect(() => {
-//     const fetchCoaches = async () => {
-//       try {
-//         const response = await axios.get('http://localhost:2003/api/coaches/coaches/approved');
-//         setCoaches(response.data);
-//       } catch (error) {
-//         console.error('Error fetching coaches:', error);
-//       }
-//     };
-    
-//     fetchCoaches();
-//   }, []);
-
-//   return (
-//     <div className="coaches-container">
-//       {coaches.map((coach) => (
-//         <div key={coach._id} className="coach-card">
-//           <img src="/path/to/profile/image" alt="Coach" className="coach-img" />
-//           <div className="coach-info">
-//             <h2 className="coach-name">{coach.username || 'Unknown Coach'}</h2>
-//             <p className="coach-text">
-//               Specialization: {coach.specialization || 'N/A'}<br />
-//               {coach.experience || 'N/A'} exp.
-//             </p>
-//             <Link to={`/coach/${coach.email}`}>
-//               <button className="book-session-btn">View Details</button>
-//             </Link>
-//           </div>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default Coach;
 
 import React, { useEffect, useState } from 'react';
 import '../CSS/Coach.css';
@@ -100,3 +57,245 @@ const Coach = () => {
 };
 
 export default Coach;
+// import React, { useEffect, useState, useRef } from "react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import { UserCircle2, Search, Dumbbell, Brain, Heart } from 'lucide-react';
+
+// const coaches = [
+//   { name: "jathushanjd", specialization: "Martial Arts", experience: "4 years", rating: 4.8 },
+//   { name: "losh", specialization: "ICT Training", experience: "2 years", rating: 4.5 },
+//   { name: "johnwick01", specialization: "Gym & Fitness", experience: "3 years", rating: 4.9 },
+//   { name: "Jeyananthan Gayathiri", specialization: "Fitness", experience: "2 years", rating: 4.6 },
+//   { name: "pavithan", specialization: "Personal Training", experience: "1 year", rating: 4.3 },
+//   { name: "aaru", specialization: "Fitness & Nutrition", experience: "2 years", rating: 4.7 },
+//   { name: "biranav", specialization: "Strength Training", experience: "2 years", rating: 4.4 },
+//   { name: "teena", specialization: "Meditation & Yoga", experience: "5 years", rating: 4.9 },
+// ];
+
+// const CoachFinder = () => {
+//   const [searchTerm, setSearchTerm] = useState("");
+//   const [hoveredCard, setHoveredCard] = useState(null);
+//   const [filteredCoaches, setFilteredCoaches] = useState(coaches);
+//   const scrollRef = useRef(null);
+//   const [scrollPosition, setScrollPosition] = useState(0);
+
+//   useEffect(() => {
+//     const filtered = coaches.filter(coach => 
+//       coach.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+//       coach.specialization.toLowerCase().includes(searchTerm.toLowerCase())
+//     );
+//     setFilteredCoaches(filtered);
+//   }, [searchTerm]);
+
+//   // Auto-scroll effect
+//   useEffect(() => {
+//     const scrollContainer = scrollRef.current;
+//     if (!scrollContainer) return;
+
+//     const scrollInterval = setInterval(() => {
+//       setScrollPosition(prev => {
+//         const newPosition = prev + 1;
+//         const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+        
+//         if (newPosition >= maxScroll) {
+//           scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+//           return 0;
+//         }
+        
+//         scrollContainer.scrollTo({ left: newPosition, behavior: 'auto' });
+//         return newPosition;
+//       });
+//     }, 30);
+
+//     return () => clearInterval(scrollInterval);
+//   }, []);
+
+//   const containerVariants = {
+//     hidden: { opacity: 0 },
+//     visible: {
+//       opacity: 1,
+//       transition: { staggerChildren: 0.2 }
+//     }
+//   };
+
+//   const itemVariants = {
+//     hidden: { opacity: 0, y: 20 },
+//     visible: {
+//       opacity: 1,
+//       y: 0,
+//       transition: { duration: 0.5, ease: "easeOut" }
+//     }
+//   };
+
+//   return (
+//     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 p-4 md:p-8">
+//       {/* Animated background elements */}
+//       <div className="fixed inset-0 overflow-hidden">
+//         <div className="absolute w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl -top-48 -left-48 animate-pulse" />
+//         <div className="absolute w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse delay-700" />
+//       </div>
+
+//       <div className="max-w-7xl mx-auto relative z-10">
+//         <motion.div
+//           initial="hidden"
+//           animate="visible"
+//           variants={containerVariants}
+//           className="text-center mb-12"
+//         >
+//           <motion.h1 
+//             variants={itemVariants}
+//             className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent"
+//           >
+//             Find Your Perfect Coach
+//           </motion.h1>
+//           <motion.p 
+//             variants={itemVariants}
+//             className="text-gray-300 text-lg md:text-xl mb-8 max-w-2xl mx-auto"
+//           >
+//             Discover expert coaches tailored to your fitness goals and personal growth journey.
+//           </motion.p>
+//           <motion.div 
+//             variants={itemVariants}
+//             className="relative max-w-xl mx-auto"
+//           >
+//             <input
+//               type="text"
+//               placeholder="Search by name or specialization..."
+//               className="w-full px-6 py-4 rounded-2xl bg-gray-800/50 text-white border border-gray-700 pl-14 focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm"
+//               value={searchTerm}
+//               onChange={(e) => setSearchTerm(e.target.value)}
+//             />
+//             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-6 w-6" />
+//           </motion.div>
+//         </motion.div>
+
+//         {/* Auto-scrolling coach cards with hidden scrollbar */}
+//         <div className="mb-20 overflow-hidden">
+//           <div 
+//             ref={scrollRef}
+//             className="flex gap-6 overflow-x-auto no-scrollbar"
+//             style={{ 
+//               scrollBehavior: 'smooth',
+//               msOverflowStyle: 'none',
+//               scrollbarWidth: 'none',
+//             }}
+//           >
+//             <style jsx global>{`
+//               /* Hide scrollbar for Chrome, Safari and Opera */
+//               .no-scrollbar::-webkit-scrollbar {
+//                 display: none;
+//               }
+              
+//               /* Hide scrollbar for IE, Edge and Firefox */
+//               .no-scrollbar {
+//                 -ms-overflow-style: none;  /* IE and Edge */
+//                 scrollbar-width: none;  /* Firefox */
+//               }
+//             `}</style>
+//             {[...filteredCoaches, ...filteredCoaches].map((coach, index) => (
+//               <motion.div
+//                 key={index}
+//                 variants={itemVariants}
+//                 initial="hidden"
+//                 animate="visible"
+//                 exit={{ opacity: 0, scale: 0.9 }}
+//                 whileHover={{ y: -8 }}
+//                 className="flex-none w-72"
+//               >
+//                 <div className="group h-full">
+//                   <div className="h-full rounded-2xl border border-gray-700 bg-gray-800/50 backdrop-blur-sm p-6 transition-all duration-300 hover:border-emerald-500/50 hover:bg-gray-800/80">
+//                     <div className="relative mb-6">
+//                       <motion.div 
+//                         animate={{
+//                           scale: hoveredCard === index ? 1.1 : 1,
+//                           rotateY: hoveredCard === index ? 180 : 0
+//                         }}
+//                         transition={{ duration: 0.6 }}
+//                         className="w-24 h-24 mx-auto rounded-full border-2 border-emerald-500 bg-emerald-500/10 flex items-center justify-center"
+//                         onHoverStart={() => setHoveredCard(index)}
+//                         onHoverEnd={() => setHoveredCard(null)}
+//                       >
+//                         <UserCircle2 className="w-16 h-16 text-emerald-400" />
+//                       </motion.div>
+//                       <motion.span 
+//                         initial={{ scale: 0 }}
+//                         animate={{ scale: 1 }}
+//                         className="absolute -top-2 left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-1 rounded-full text-sm font-medium shadow-lg"
+//                       >
+//                         Coach
+//                       </motion.span>
+//                     </div>
+                    
+//                     <div className="text-center">
+//                       <h3 className="text-xl font-bold text-white mb-2">{coach.name}</h3>
+//                       <p className="text-emerald-400 font-medium mb-2">
+//                         {coach.specialization}
+//                       </p>
+//                       <p className="text-gray-400 text-sm mb-6">
+//                         {coach.experience} experience
+//                       </p>
+//                       <button
+//                         className="w-full py-3 px-6 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 transform hover:scale-105 focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+//                       >
+//                         View Profile
+//                       </button>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </div>
+
+//         {/* Why Choose Us section */}
+//         <motion.div
+//           initial={{ opacity: 0, y: 50 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.8, delay: 0.6 }}
+//           className="mt-16 text-center relative z-10"
+//         >
+//           <h2 className="text-3xl font-bold text-white mb-8 bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">
+//             Why Choose Our Coaches?
+//           </h2>
+//           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+//             {[
+//               { 
+//                 icon: Dumbbell, 
+//                 title: "Expert Guidance", 
+//                 description: "Get personalized training plans tailored specifically to your goals and fitness level" 
+//               },
+//               { 
+//                 icon: Brain, 
+//                 title: "Continuous Learning", 
+//                 description: "Stay updated with the latest fitness trends and evidence-based training techniques" 
+//               },
+//               { 
+//                 icon: Heart, 
+//                 title: "Holistic Approach", 
+//                 description: "Focus on both physical and mental well-being for complete transformation" 
+//               },
+//             ].map((feature, index) => (
+//               <motion.div
+//                 key={index}
+//                 variants={itemVariants}
+//                 whileHover={{ scale: 1.05, backgroundColor: 'rgba(16, 185, 129, 0.1)' }}
+//                 className="bg-gray-800/50 backdrop-blur-lg p-8 rounded-xl border border-gray-700 transition-all duration-300"
+//               >
+//                 <motion.div
+//                   whileHover={{ rotate: 360 }}
+//                   transition={{ duration: 0.8 }}
+//                 >
+//                   <feature.icon className="w-12 h-12 text-emerald-500 mx-auto mb-4" />
+//                 </motion.div>
+//                 <h3 className="text-white font-semibold text-xl mb-3">{feature.title}</h3>
+//                 <p className="text-gray-300">{feature.description}</p>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </motion.div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default CoachFinder;

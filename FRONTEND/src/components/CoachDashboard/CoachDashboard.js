@@ -59,7 +59,7 @@ const CoachDashboard = () => {
           {coach && (
             <>
               <img src="profile-pic-url" alt="Profile" className="profile-pic" />
-              <h3>{`${coach.firstName} ${coach.lastName}`}</h3>
+              <h3>{`${coach.username}`}</h3>
               <p>{coach.email}</p>
               
             </>

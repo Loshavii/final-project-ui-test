@@ -1,4 +1,4 @@
-
+/* 
    .user-profile {
     background: linear-gradient(to right, #1e3a8a, #4c1d95);
     min-height: 100vh;
@@ -229,4 +229,255 @@
   .next-btn:hover {
     background-color: #1f891f;
   }
+   */
+
+   /* Container */
+/* .dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #0d0d0d;
+  color: #ffffff;
+} */
+/* Container */
+.udashboard-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #111827; /* Page Background */
+  color: #FFFFFF; /* Primary Text */
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Profile Section */
+.uprofile-section {
+  background: rgba(31, 41, 55, 0.5); /* Glass effect with opacity */
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  width: 280px;
+  height: 300px;
+  border-radius: 8px;
+  text-align: center;
+  color: #FFFFFF; /* Primary Text */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.uprofile-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.uprofile-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.profile-icon {
+  font-size: 60px;
+  color: #9CA3AF; /* Secondary Text */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 90px;
+}
+
+.uprofile-section h3 {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+.payment-status {
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+.payment-status span {
+  font-weight: bold;
+}
+
+.status-completed {
+  display: flex;
+  align-items: center;
+ 
+  background-color: #374151;
+  color: #10B981;
+  padding: 3px 6px;
+  border-radius: 15px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin: 0;
+
+}
+.payment-s {
+  margin: 0; 
+  margin-left: auto;
+  margin-right: auto;
   
+}
+.status-completed:hover {
+  background-color: #10B981; /* Primary Hover */
+  color: #FFFFFF;
+}
+
+.status-icon {
+  color: #10B981; /* Primary Accent */
+  font-size: 1.2rem;
+  
+}
+
+/* Main Dashboard */
+.main-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Welcome Section */
+.welcome-section {
+  background: rgba(31, 41, 55, 0.5); /* Secondary Background with glass effect */
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.welcome-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.welcome-section p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.uprofile-btn,
+.coach-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: #FFFFFF; /* Primary Text */
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.uprofile-btn {
+  background-color: #10B981; /* Primary Accent */
+}
+
+.uprofile-btn:hover {
+  background-color: #059669; /* Primary Hover */
+}
+
+.coach-btn {
+  background-color: #374151; /* Secondary Border */
+}
+
+.coach-btn:hover {
+  background-color: #5a5a5a; /* Card Hover Background */
+}
+
+/* Status Message */
+.status-message {
+  background-color: #124c40; /* Profile Status */
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  color: #FFFFFF;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.status-message h3 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.status-message p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Welcome Card */
+.welcome-card {
+  background: rgba(31, 41, 55, 0.5); /* Secondary Background with glass effect */
+  padding: 20px;
+  border-radius: 8px;
+  color: #FFFFFF;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.welcome-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.welcome-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.complete-profile-btn,
+.find-coach-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: #FFFFFF;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.complete-profile-btn {
+  background-color: #10B981; /* Primary Accent */
+}
+
+.complete-profile-btn:hover {
+  background-color: #059669; /* Primary Hover */
+}
+
+.find-coach-btn {
+  background-color: #5a5a5a; /* Card Hover Background */
+}
+
+.find-coach-btn:hover {
+  background-color: #374151;
+}

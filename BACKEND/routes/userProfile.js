@@ -2,8 +2,7 @@ const express = require('express');
 const UserProfile = require('../models/UserProfile');
 const router = express.Router();
 const coachesProfile = require('../models/CoachProfile');
-const Payment = require ('../routes/payment');
-
+const payment = require ('../routes/payment')
 // Route to create a new user profile
 // router.post('/', async (req, res) => {
 //     try {
@@ -210,19 +209,6 @@ router.get('/pay/combined-data', async (req, res) => {
   }
 });
 
-// router.get('/detailfrom/:coachEmail', async (req, res) => {
-//   const { coachEmail } = req.params;
-//   try {
-//       // Find users where the coachEmail matches
-//       const profiles = await UserProfile.find({ coachEmail });
-//       if (!profiles) {
-//           return res.status(404).json({ message: 'No users found for this coach.' });
-//       }
-//       return res.status(200).json(profiles);
-//   } catch (err) {
-//       return res.status(500).json({ message: 'Server error', error: err });
-//   }
-// });
 
 
 router.get('/gofor/:coachEmail', async (req, res) => {

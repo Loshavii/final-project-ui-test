@@ -1,83 +1,4 @@
 /* 
-body {
-    background-color: #181818 !important; 
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .login-card {
-    background-color: #181818;
-    border-radius: 10px;
-    box-shadow: 0px 10px 20px rgba(109, 107, 107, 0.5),
-              0px 6px 6px rgba(209, 208, 209, 0.2);
-    max-width: 400px;
-    width: 100%;
-    padding: 30px;
-    text-align: center;
-  }
-  
-  .login-card h2 {
-    margin-bottom: 20px;
-    font-size: 28px;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-    position: relative;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-  }
-  
-  .form-group input:focus {
-    border-color: #b3ff00; 
-    outline: none;
-  }
-  
-  .login-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #4d4b4b; 
-    color: #0d0d0d; 
-    border: none;
-    border-radius: 6px;
-    
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .login-button:hover {
-    background-color: #d3d3d3; 
-    color: #0d0d0d; 
-    transform: scale(1.05);
-  }
-  .password-toggle-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    color: #b3ff00;
-    margin-left: 10px;
-}
-
- */
-
-
-
 
  .login-page {
   display: flex;
@@ -348,4 +269,271 @@ body {
   gap: 0.5rem; 
   font-size: 1rem;
   color: #ffffff; 
-} 
+}  */
+.login-page {
+  
+    display: flex;
+    min-height: 100vh !important;
+    background: #111827 !important; 
+    background-size: 300% 300%;
+  }
+
+@keyframes gradient-shift1 {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.login-form-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.login-form {
+  max-width: 400px;
+  padding: 2rem;
+  background: rgba(31, 41, 55, 0.5); /* Updated card background */
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  border: 1px solid #374151; /* Added card border */
+}
+
+.login-form:hover {
+  background: rgba(55, 65, 81, 0.4); /* Updated card hover state */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-text h1,
+.welcome-text p {
+  color: #FFFFFF; /* Updated to primary text color */
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.avatar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+
+.avatar-icon {
+  color: #FFFFFF;
+  font-size: 1.5rem;
+}
+
+.avatar-gradient {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #10B981, rgba(16, 185, 129, 0.2)); 
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-inner {
+  width: 100%;
+  height: 100%;
+  background: rgba(31, 41, 55, 0.5); /* Updated to match card background */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit-dot {
+  width: 12px;
+  height: 12px;
+  background: #10B981; /* Updated to primary accent color */
+  border-radius: 50%;
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbit 4s linear infinite;
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(60px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(60px) rotate(-360deg);
+  }
+}
+
+.form-group1 {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.input-wrapper1 {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  border: 1px solid #374151; /* Updated border color */
+  border-radius: 8px;
+  background: rgba(55, 65, 81, 0.3); /* Updated to cardDefault color */
+  transition: border 0.2s;
+}
+
+.input-wrapper1:focus-within {
+  border-color: #10B981; /* Updated to primary accent color */
+}
+
+.input-icon1 {
+  position: absolute;
+  left: 12px;
+  color: #9CA3AF; /* Updated to secondary text color */
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+.login-input1 {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #FFFFFF; /* Updated to primary text color */
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+.login-input1::placeholder {
+  color: #9CA3AF; /* Updated to secondary text color */
+}
+
+.login-submit-button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #10B981; /* Updated to primary accent color */
+  color: #FFFFFF;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  margin-top: 1rem;
+}
+
+.login-submit-button:hover {
+  background: #059669; /* Updated to primaryHover color */
+  transform: scale(1.05);
+}
+
+.login-submit-button.loading {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.illustration {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.circles-background .circle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: rgba(16, 185, 129, 0.1); /* Updated with tertiary accent color */
+  border-radius: 50%;
+  animation: circle-move 10s linear infinite;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.feature-card {
+  background: rgba(31, 41, 55, 0.5); /* Updated to match card background */
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s;
+  border: 1px solid #374151; /* Added card border */
+}
+
+.feature-card:hover {
+  transform: scale(1.05);
+  background: rgba(55, 65, 81, 0.4); /* Updated to cardHover color */
+}
+
+.feature-icon {
+  color: #10B981; /* Updated to primary accent color */
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.create-account-button {
+  width: 30%;
+  padding: 0.35rem 1rem;
+  background: #10B981; /* Updated to primary accent color */
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.create-account-button:hover {
+  background: #059669; /* Updated to primaryHover color */
+  transform: scale(1.05);
+}
+
+.create-account-button:active {
+  transform: scale(0.98);
+  background: rgba(16, 185, 129, 0.2); /* Updated to secondary accent color */
+}
+
+.create-account-button.loading {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.create-account {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: #D1D5DB; /* Updated to tertiary text color */
+}
