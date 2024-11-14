@@ -4,6 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import '../CSS/CoachDashboard.css';
 const CoachDashboard = () => {
   const [coach, setCoach] = useState(null);
   const navigate = useNavigate();
