@@ -8,7 +8,6 @@ const coachSchema = new mongoose.Schema({
     username: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    emailPassword: { type: String, required: true }, // Email password or app password (consider security)
     specialization: { type: String }, // Example additional field for coach specialization
     experience: { type: Number }, // Years of experience
     status: { type: String, enum: ['pending', 'approved', 'rejected'], default: 'pending' },

@@ -6,47 +6,9 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 // Registration route for coach
-// router.post('/register', async (req, res) => {
-//     try {
-//         const { firstName, lastName, username, email, password, specialization, experience } = req.body;
-
-//         // Check if coach already exists
-//         const coachExists = await Coach.findOne({ email });
-//         if (coachExists) {
-//             return res.status(400).json({ error: 'Coach already exists' });
-//         }
-
-//         // Hash the password
-//         const hashedPassword = await bcrypt.hash(password, 10);
-
-//         // Create new coach entry
-//         const newCoach = new Coach({
-//             firstName,
-//             lastName,
-//             username,
-//             email,
-//             password: hashedPassword, // Storing hashed password
-//             specialization,
-//             experience,
-//             role: 'coach',
-//             status: 'pending', // Initially set to pending
-//         });
-
-//         // Save the coach details to the database
-//         await newCoach.save();
-
-//         // Respond with success message
-//         res.status(201).json({ message: 'Registration successful. Please wait for admin verification.' });
-//     } catch (err) {
-//         console.error('Error registering coach:', err.message);
-//         res.status(500).json({ error: 'Error registering coach' });
-//     }
-// });
-
-// Registration route for coach
 router.post('/register', async (req, res) => {
     try {
-        const { firstName, lastName, username, email, password, emailPassword, specialization, experience } = req.body;
+        const { firstName, lastName, username, email, password, specialization, experience } = req.body;
 
         // Check if coach already exists
         const coachExists = await Coach.findOne({ email });
@@ -54,9 +16,8 @@ router.post('/register', async (req, res) => {
             return res.status(400).json({ error: 'Coach already exists' });
         }
 
-        // Hash the password and emailPassword
+        // Hash the password
         const hashedPassword = await bcrypt.hash(password, 10);
-        const hashedEmailPassword = await bcrypt.hash(emailPassword, 20);
 
         // Create new coach entry
         const newCoach = new Coach({
@@ -64,12 +25,11 @@ router.post('/register', async (req, res) => {
             lastName,
             username,
             email,
-            password: hashedPassword,
-            emailPassword: hashedEmailPassword,  // Storing hashed emailPassword
+            password: hashedPassword, // Storing hashed password
             specialization,
             experience,
             role: 'coach',
-            status: 'pending',  // Initially set to pending
+            status: 'pending', // Initially set to pending
         });
 
         // Save the coach details to the database
@@ -82,6 +42,46 @@ router.post('/register', async (req, res) => {
         res.status(500).json({ error: 'Error registering coach' });
     }
 });
+
+// Registration route for coach
+// router.post('/register', async (req, res) => {
+//     try {
+//         const { firstName, lastName, username, email, password, emailPassword, specialization, experience } = req.body;
+
+//         // Check if coach already exists
+//         const coachExists = await Coach.findOne({ email });
+//         if (coachExists) {
+//             return res.status(400).json({ error: 'Coach already exists' });
+//         }
+
+//         // Hash the password and emailPassword
+//         const hashedPassword = await bcrypt.hash(password, 10);
+//         const hashedEmailPassword = await bcrypt.hash(emailPassword, 20);
+
+//         // Create new coach entry
+//         const newCoach = new Coach({
+//             firstName,
+//             lastName,
+//             username,
+//             email,
+//             password: hashedPassword,
+//             emailPassword: hashedEmailPassword,  // Storing hashed emailPassword
+//             specialization,
+//             experience,
+//             role: 'coach',
+//             status: 'pending',  // Initially set to pending
+//         });
+
+//         // Save the coach details to the database
+//         await newCoach.save();
+
+//         // Respond with success message
+//         res.status(201).json({ message: 'Registration successful. Please wait for admin verification.' });
+//     } catch (err) {
+//         console.error('Error registering coach:', err.message);
+//         res.status(500).json({ error: 'Error registering coach' });
+//     }
+// });
 // Route to handle coach login
 router.post('/login', async (req, res) => {
     try {
