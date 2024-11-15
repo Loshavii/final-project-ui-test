@@ -307,7 +307,7 @@ const Dashboard = () => {
                   {paymentStatus === 'succeeded' ? (
                     <p className="payment-success">Payment completed successfully. Thank you!</p>
                   ) : (
-                    <button className="make-payment-button" onClick={handleMakePayment}>Make a Payment</button>
+                    <button className="uprofile-btn" onClick={handleMakePayment}>Make a Payment</button>
                   )}
                 </div>
               ) : profileData.status === 'declined' ? (

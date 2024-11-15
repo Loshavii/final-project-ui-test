@@ -57,6 +57,8 @@ import "../CSS/UserDetails.css";
 
 const CoachProfileTable = () => {
   const [profiles, setProfiles] = useState([]);
+  const [payments, setPayments] = useState([]);
+
 
   // Retrieve coachEmail from session storage
   const coachEmail = sessionStorage.getItem("coachEmail");
@@ -101,7 +103,7 @@ const CoachProfileTable = () => {
               <td>{profile.email}</td>
               <td>{profile.status}</td>
               <td>{profile.coachEmail}</td>
-              <td>{profile.paymentStatus || 'N/A'}</td>
+              <td>{payments.paymentStatus || 'N/A'}</td>
               <td>
                 <button onClick={() => handleEmailClick(profile.email)}>
                   Send Email

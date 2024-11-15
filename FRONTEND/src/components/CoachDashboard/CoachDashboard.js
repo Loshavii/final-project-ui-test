@@ -48,9 +48,10 @@ const CoachDashboard = () => {
     }
   };
 
-  const handleClick = () => {
-    window.location.href = 'https://live-streaming-app-delta.vercel.app/';
-  };
+const handleClick = () => {
+  window.open('https://live-streaming-app-delta.vercel.app/', '_blank');
+};
+
   
 
   return (

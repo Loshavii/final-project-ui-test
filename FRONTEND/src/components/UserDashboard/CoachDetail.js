@@ -231,15 +231,16 @@ export default function Component() {
             transition={{ delay: 0.7 }}
             className="mt-8 flex justify-end"
           >
-            <motion.button
-              onClick={handleSendRequest}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 bg-green-500 text-white rounded-lg font-medium flex items-center gap-2 hover:bg-green-600 transition-colors"
-            >
-              <SendHorizontal className="w-4 h-4" />
-              Send Request
-            </motion.button>
+<motion.button
+  onClick={handleSendRequest}
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  className="w-30 py-3 px-6 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 transform hover:scale-105 focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-gray-800 flex items-center gap-2"
+>
+  <SendHorizontal className="w-4 h-4" />
+  Send Request
+</motion.button>
+
           </motion.div>
         </div>
       </motion.div>
