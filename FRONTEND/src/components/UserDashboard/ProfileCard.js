@@ -48,12 +48,12 @@ export default function ProfileCard() {
       <div className="max-w-7xl mx-auto">
         <h1 className="text-white text-2xl font-bold mb-8">Client Profiles</h1>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-10">
           {profiles.length > 0 ? (
             profiles.map((profile) => (
               <div
                 key={profile._id}
-                className="bg-gray-800/50 border border-gray-700 rounded-lg overflow-hidden hover:bg-gray-700/40 transition-all duration-300"
+                className="bg-gray-800/50 h-80 w-72 border border-gray-700 rounded-lg overflow-hidden hover:bg-gray-700/40 transition-all duration-300"
               >
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
@@ -72,7 +72,7 @@ export default function ProfileCard() {
                     </span>
                   </div>
 
-                  <div className="space-y-2 text-gray-400">
+                  <div className="space-y-2 text-gray-400 text-base">
                     <p>Email: {profile.email}</p>
                     <p>Phone: {profile.phone}</p>
                   </div>
