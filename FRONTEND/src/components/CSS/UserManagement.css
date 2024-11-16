@@ -126,4 +126,14 @@ Container for the entire layout
   .action-button.danger:hover {
     background-color: #c9302c;
   }
+  .pie-chart-container {
+    margin: 20px auto;
+    max-width: 600px;
+  }
+  
+  .sub-header {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
   

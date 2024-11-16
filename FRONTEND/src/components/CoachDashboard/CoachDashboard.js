@@ -244,7 +244,7 @@ function CoachDashboard() {
             { icon: Home, label: 'Home', onClick: () => navigate('/') },
             { icon: Mail, label: 'Requests', onClick: viewRequests},
             { icon: Users, label: 'Clients', onClick: UserDetails },
-            { icon: Bell, label: 'Notifications', onClick: () => navigate('/notifications') },
+            // { icon: Bell, label: 'Notifications', onClick: () => navigate('/notifications') },
             { icon: PlusCircle, label: 'New Session', onClick: joinVideoChat },
           ].map((item, index) => (
             <SidebarMenuItem key={index}>
@@ -336,23 +336,27 @@ function CoachDashboard() {
                </ul>
              </section>
 
-             <section>
+             {/* <section>
                <h2 className="text-2xl font-bold mb-4 text-white">Ready to Transform Your Coaching?</h2>
                <p className="text-[#9CA3AF] mb-6">Join thousands of successful coaches who have elevated their practice with CoachPro. Start your journey today and experience the difference.</p>
                <div className="flex justify-center">
-                 <Button className="w-fit bg-[#10B981] hover:bg-[#059669] text-white font-bold py-2 px-8 rounded-full shadow-lg transition-all duration-200 ease-in-out transform hover:-translate-y-1 hover:shadow-xl">
+                 <Button className="w-fit bg-[#10B981] hover:bg-[#059669] text-white font-bold py-2 px-8 rounded-full shadow-lg transition-all duration-200 ease-in-out transform hover:-translate-y-1 hover:shadow-xl" onClick={joinVideoChat}>
                    Start Coaching
                  </Button>
                </div>
-             </section>
+             </section> */}
            </main>
            <div className="fixed bottom-8 right-8">
              <div className="bg-[rgba(31,41,55,0.5)] hover:bg-[rgba(55,65,81,0.4)] p-4 rounded-lg shadow-lg border border-[#374151] max-w-sm">
                <h3 className="text-xl font-bold mb-2 text-white">Ready to Coach?</h3>
                <p className="text-[#9CA3AF] mb-4">Launch your coaching session with just one click. Our intuitive interface ensures a smooth experience for both you and your clients.</p>
-               <Button className=" w-full bg-[#10B981] hover:bg-[#059669] text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-200 ease-in-out transform hover:-translate-y-1 hover:shadow-xl">
-                 Start Coaching
-               </Button>
+               <Button 
+  className="w-full bg-[#10B981] hover:bg-[#059669] text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-200 ease-in-out transform hover:-translate-y-1 hover:shadow-xl"
+  onClick={joinVideoChat}
+>
+  Start Coaching
+</Button>
+
              </div>
            </div>
       </div>
