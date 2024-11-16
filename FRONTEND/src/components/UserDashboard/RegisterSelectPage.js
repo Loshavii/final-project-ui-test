@@ -221,8 +221,9 @@ const LandingPage = () => {
     </div>
 
       <div className="container mx-auto px-4 py-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 animate-slideInLeft">
+        <div className=" gap-12 items-center">
+          
+          <div className="space-y-6 mx-14 animate-slideInLeft">
             <h1 className="text-4xl lg:text-5xl font-bold">
               Welcome Back to{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
@@ -230,8 +231,7 @@ const LandingPage = () => {
               </span>
             </h1>
             <p className="text-gray-400 text-lg">
-              Your wellness journey continues here! At Fitzhore, we believe that every step you take brings you closer to your goals.
-            </p>
+            Register here to create your user account and start your fitness journey with personalized plans and progress tracking.            </p>
             <div className="flex gap-4">
               <button
                 onClick={() => navigate('/register-user')}
@@ -249,18 +249,13 @@ const LandingPage = () => {
             </div>
           </div>
 
-          <div className="relative animate-slideInRight">
-            <div className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
-              <img
-                src={yogaImage}
-                alt="Fitness"
-                className="rounded-lg w-100 h-20"
-              />
+          <div className="relative  mx-14 animate-slideInRight">
+            <div className="bg-gray-800/50 rounded-2xl mt-10 relative p-8 border border-gray-700">
+              
               <div className="mt-6 space-y-4">
-                <h3 className="text-xl font-semibold">Join our community</h3>
+                <h3 className="text-xl font-semibold">Get Started on Your Fitness Journey</h3>
                 <p className="text-gray-400">
-                  Connect with expert coaches, track your progress, and gain insights that empower you to elevate your fitness and well-being.
-                </p>
+                Welcome to FITZHORE! Register now to unlock a world of personalized fitness plans, tracking tools, and expert guidance. Whether you’re looking to lose weight, build muscle, or improve your overall health, our platform provides everything you need to succeed. As a user, you’ll receive customized workout and nutrition plans tailored to your goals, track your progress with detailed analytics, and participate in exciting fitness challenges. Connect with experienced coaches, get real-time feedback, and be part of a supportive fitness community. Start your fitness journey today and see the results you’ve always dreamed of!                </p>
               </div>
             </div>
             <div className="absolute -z-10 top-4 right-4 w-full h-full bg-green-500/20 rounded-2xl" />
@@ -268,8 +263,8 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="container mx-auto px-4 py-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 animate-slideInLeft">
+        <div className="gap-12 items-center">
+          <div className="space-y-6 mx-14 animate-slideInLeft">
             <h1 className="text-4xl lg:text-5xl font-bold">
               Welcome Back to{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
@@ -277,7 +272,7 @@ const LandingPage = () => {
               </span>
             </h1>
             <p className="text-gray-400 text-lg">
-              Your wellness journey continues here! At Fitzhore, we believe that every step you take brings you closer to your goals.
+            Join us as a coach and offer your expertise to help others achieve their fitness goals with personalized coaching and training.
             </p>
             <div className="flex gap-4">
               <button
@@ -296,17 +291,13 @@ const LandingPage = () => {
             </div>
           </div>
 
-          <div className="relative animate-slideInRight">
-            <div className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
-              <img
-                src={yogaImage}
-                alt="Fitness"
-                className="rounded-lg w-100 h-20"
-              />
+          <div className="relative  mx-14 animate-slideInRight">
+            <div className="bg-gray-800/50 rounded-2xl mt-10 relative p-8 border border-gray-700">
+              
               <div className="mt-6 space-y-4">
-                <h3 className="text-xl font-semibold">Join our community</h3>
+                <h3 className="text-xl font-semibold">Become a Fitness Leader</h3>
                 <p className="text-gray-400">
-                  Connect with expert coaches, track your progress, and gain insights that empower you to elevate your fitness and well-being.
+                Join FITZHORE as a coach and inspire others on their fitness journey! By registering as a coach, you’ll have the opportunity to create personalized fitness plans, lead one-on-one training sessions, and guide users towards achieving their health and wellness goals. Our platform allows you to reach a wide audience, build your personal brand, and expand your coaching career. With tools to track client progress and offer real-time feedback, you can make a real impact in the fitness community. Become a part of FITZHORE and help people transform their lives while growing your coaching business!
                 </p>
               </div>
             </div>

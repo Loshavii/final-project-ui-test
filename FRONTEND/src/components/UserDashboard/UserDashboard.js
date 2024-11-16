@@ -323,7 +323,7 @@ const Dashboard = () => {
         <p>
           You’re just a few steps away from achieving your fitness goals!
           To get the best possible matches with coaches, please take a moment to fill out your assessment. 
-          Let's get started on your path to success! 💪✨
+          Let's get started on your path to success! 
         </p>
           <div className="action-buttons">
             <button className="uprofile-btn" onClick={goToProfile}>Complete Your Profile</button>
@@ -337,22 +337,24 @@ const Dashboard = () => {
             <div>
               {profileData.status === 'approved' ? (
                 <div className="status-message congratulation">
-                  <h3>🎉 Congratulations! Your profile has been approved! 🎉</h3>
+                  <h3> Congratulations! Your profile has been approved! </h3>
                   <p>You are now ready to start connecting with coaches. Best of luck on your fitness journey!</p>
                   {paymentStatus === 'succeeded' ? (
-                    <p className="payment-success">Payment completed successfully. Thank you!</p>
+                    <p className="payment-success">Payment completed successfully. Thank you!<br></br><br></br>
+                    Please check your email for your coaching link.</p>
+                    
                   ) : (
                     <button className="uprofile-btn" onClick={handleMakePayment}>Make a Payment</button>
                   )}
                 </div>
               ) : profileData.status === 'declined' ? (
                 <div className="status-message rejection">
-                  <h3>❌ Unfortunately, your profile has been rejected. ❌</h3>
+                  <h3> Unfortunately, your profile has been rejected. </h3>
                   <p>Please review your information and try again. We're here to help!</p>
                 </div>
               ) : profileData.status === 'pending' ? (
                 <div className="status-message pending">
-                  <h3>⏳ Your profile is currently pending approval. ⏳</h3>
+                  <h3> Your profile is currently pending approval. </h3>
                   <p>Thank you for your patience! We will notify you once the review process is complete.</p>
                 </div>
               ) : null}

@@ -443,18 +443,18 @@ const LandingPage = () => {
   const services = [
     {
       icon: Dumbbell,
-      title: "Personal Training",
-      description: "One-on-one sessions tailored to your specific fitness goals and needs."
+      title: "1-on-1 Coaching",
+      description: "Feature one-on-one live sessions with coaches for personalized fitness guidance."
     },
     {
       icon: Users,
-      title: "Group Classes",
-      description: "High-energy group workouts including yoga, HIIT, spinning, and more."
+      title: "Personalized Fitness Plans",
+      description: "Custom workout and meal plans based on user preferences, goals, and health data."
     },
     {
       icon: Star,
-      title: "Nutrition Planning",
-      description: "Customized meal plans and nutritional guidance for optimal results."
+      title: "Dietary Advice",
+      description: "Personalized dietary recommendations based on fitness goals."
     }
   ];
   const navigate = useNavigate();
