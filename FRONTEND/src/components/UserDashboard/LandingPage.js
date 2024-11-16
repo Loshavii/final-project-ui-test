@@ -337,7 +337,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronDown, Menu, Dumbbell, Star, Users, Award, Mail, Phone, MapPin, Clock, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-
+import logo from '../CSS/fitzhorelogo.png';
 const FeatureCard = ({ icon: Icon, title, description }) => (
   <div className="group p-6 bg-gray-800/50 rounded-xl backdrop-blur-sm hover:bg-gray-700/50 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-green-500/20">
     <div className="relative w-16 h-16 mb-4">
@@ -372,9 +372,7 @@ const ServiceCard = ({ icon: Icon, title, description }) => (
     <Icon className="w-12 h-12 text-green-500 mb-6 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
     <h3 className="text-2xl font-bold mb-4 text-white">{title}</h3>
     <p className="text-gray-400 mb-6">{description}</p>
-    <button className="flex items-center gap-2 text-green-500 group-hover:text-green-400 transition-colors duration-300">
-      Learn More <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" />
-    </button>
+
   </div>
 );
 
@@ -472,15 +470,18 @@ const LandingPage = () => {
       {/* Content */}
       <div className="relative z-10">
         {/* Navbar */}
-        <header className={`fixed z-50 flex w-full top-0 transition-all duration-500 ${scrolled ? 'bg-gray-900/70 backdrop-blur-sm shadow-lg' : ''}`}>
-          <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <header className={`fixed z-50 h-20 flex w-full top-0 transition-all duration-500 ${scrolled ? 'bg-gray-900/70 backdrop-blur-sm shadow-lg' : ''}`}>
+          <div className="container mx-auto px-4 py-1 flex justify-between items-center">
             <div className="group">
-              <a href="/" className="text-3xl font-bold text-white flex items-center gap-2">
-                <span className="text-green-500 group-hover:animate-spin-slow">
-                  <Dumbbell />
-                </span>
-                Fit<span className="text-green-500">zhore</span>
-              </a>
+            <a href="/" className="text-3xl font-bold text-white flex items-center gap-2">
+            <img
+              src={logo}
+              alt="Fitzhore Logo"
+              className="h-32 w-32 text-green-500 group-hover:animate-spin-slow"
+            />
+              {/* Fit<span className="text-green-500">zhore</span> */}
+            </a>
+
             </div>
             <nav className="hidden md:flex space-x-8">
               {navItems.map((item, index) => (
@@ -676,8 +677,13 @@ const LandingPage = () => {
       {/* Logo and Description */}
       <div>
         <div className="flex items-center gap-2 mb-4">
-          <Dumbbell className="w-8 h-8 text-green-500" />
-          <h2 className="text-2xl font-bold text-white">Fitzhore</h2>
+        <a href="/" className="text-3xl font-bold text-white flex items-center gap-2">
+            <img
+              src={logo}
+              alt="Fitzhore Logo"
+              className="h-32 w-32 text-green-500 group-hover:animate-spin-slow"
+            /></a>
+          
         </div>
         <p className="text-gray-400">
           Transform your body and mind with the best trainers, modern equipment, and a supportive community.
