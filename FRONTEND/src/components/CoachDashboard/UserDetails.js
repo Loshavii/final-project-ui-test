@@ -92,7 +92,7 @@ const CoachProfileTable = () => {
             <th>Email</th>
             <th>Status</th>
             <th>Coach Email</th>
-            <th>Payment Status</th>
+            {/* <th>Payment Status</th> */}
             <th>Action</th>
           </tr>
         </thead>
@@ -103,7 +103,7 @@ const CoachProfileTable = () => {
               <td>{profile.email}</td>
               <td>{profile.status}</td>
               <td>{profile.coachEmail}</td>
-              <td>{payments.paymentStatus || 'N/A'}</td>
+              {/* <td>{payments.paymentStatus || 'N/A'}</td> */}
               <td>
                 <button onClick={() => handleEmailClick(profile.email)}>
                   Send Email
