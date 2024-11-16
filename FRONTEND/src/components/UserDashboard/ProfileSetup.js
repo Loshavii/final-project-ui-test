@@ -319,7 +319,8 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import { House, LogIn, MousePointer2,LayoutDashboard } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 function ProfileSetup() {
   const [formData, setFormData] = useState({
     name: '',
@@ -341,13 +342,13 @@ function ProfileSetup() {
     bloodPressure: '',
     heartRate: '',
     bloodSugarLevels: '',
-    contactOption: '',
+    // contactOption: '',
     coachEmail: '',
     userId: '',
   });
 
   const [message, setMessage] = useState('');
-
+  const navigate = useNavigate();
   useEffect(() => {
     const storedCoachEmail = sessionStorage.getItem('coachEmail');
     const storedUserId = sessionStorage.getItem('id');
@@ -393,6 +394,31 @@ function ProfileSetup() {
 
   return (
     <div className="bg-gray-900 min-h-screen flex items-center justify-center p-6">
+      <div className="fixed left-2 top-1/2 -translate-y-1/2">
+        <div className="relative flex flex-col space-y-4 bg-gray-800/30 p-1 rounded-2xl backdrop-blur-lg border-l-4 border-emerald-500/50 shadow-lg shadow-emerald-500/5">
+          {[
+            { icon: House, path: '/', tooltip: 'Home' },
+            { icon: MousePointer2, path: '/register-select', tooltip: 'Register' },
+            { icon: LogIn, path: '/register-user', tooltip: 'Sign Up' },
+            { icon: LayoutDashboard, path: '/user-dashboard', tooltip: 'UserDashboard' }
+          ].map(({ icon: Icon, path, tooltip }, index) => (
+            <div key={index} className="group relative">
+              <button
+                onClick={() => navigate(path)}
+                className="p-3 w-12 h-12 rounded-xl bg-gray-700/50 hover:bg-emerald-500/20 text-gray-400 hover:text-emerald-500 transition-all duration-300 flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-emerald-500/20"
+              >
+                <Icon className="w-6 h-6" />
+              </button>
+              <div className="absolute left-full ml-4 px-3 py-1 bg-gray-800 text-emerald-500 text-sm rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 whitespace-nowrap border border-emerald-500/20 shadow-lg shadow-emerald-500/5">
+                {tooltip}
+                <div className="absolute left-0 top-1/2 -translate-x-1 -translate-y-1/2 w-2 h-2 bg-gray-800 border-l border-t border-emerald-500/20 transform -rotate-45"></div>
+              </div>
+            </div>
+          ))}
+          <div className="absolute -left-[2px] top-0 w-[2px] h-full bg-gradient-to-b from-emerald-500/0 via-emerald-500/50 to-emerald-500/0"></div>
+          <div className="absolute -z-10 inset-0 rounded-2xl bg-gradient-to-r from-emerald-500/5 to-transparent"></div>
+        </div>
+      </div>
       <form
         onSubmit={handleSubmit}
         className="max-w-2xl w-full bg-gray-800/50 p-8 rounded-lg border border-gray-700 shadow-md"
@@ -616,11 +642,11 @@ function ProfileSetup() {
             className="w-60 p-2 bg-gray-700/30 border border-gray-700 rounded focus:ring-2 focus:ring-green-500 text-white"          />
         </div>
 
-        <h2 className="text-3xl font-semibold text-green-500 col-span-full text-center mt-8 mb-4">
+        {/* <h2 className="text-3xl font-semibold text-green-500 col-span-full text-center mt-8 mb-4">
           Contact Options
-        </h2>
+        </h2> */}
 
-        <div className="form-group col-span-full">
+        {/* <div className="form-group col-span-full">
           <label className="text-gray-400 font-semibold">Preferred Contact Method:</label>
           <div className="flex space-x-6 mt-2">
             <label className="flex items-center space-x-2 cursor-pointer">
@@ -648,7 +674,7 @@ function ProfileSetup() {
               </span>
             </label>
           </div>
-        </div>
+        </div> */}
         </div>
 
         <div className="col-span-full mt-8 flex justify-between">

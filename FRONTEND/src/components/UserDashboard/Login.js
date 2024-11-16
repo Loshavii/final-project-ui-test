@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Mail, Lock, Loader, User, Key, Shield, Activity } from 'lucide-react';
+import { Mail, Lock, Loader, User, House, LogIn, MousePointer2, Key, Shield, Activity } from 'lucide-react';
 import axios from 'axios';
 import '../CSS/Login.css';
 
@@ -65,6 +65,30 @@ const Login = () => {
 
   return (
     <div className="login-page">
+      <div className="fixed left-2 top-1/2 -translate-y-1/2">
+        <div className="relative flex flex-col space-y-4 bg-gray-800/30 p-1 rounded-2xl backdrop-blur-lg border-l-4 border-emerald-500/50 shadow-lg shadow-emerald-500/5">
+          {[
+            { icon: House, path: '/', tooltip: 'Home' },
+            { icon: MousePointer2, path: '/register-select', tooltip: 'Register' },
+            { icon: LogIn, path: '/register-user', tooltip: 'Sign Up' }
+          ].map(({ icon: Icon, path, tooltip }, index) => (
+            <div key={index} className="group relative">
+              <button
+                onClick={() => navigate(path)}
+                className="p-3 w-12 h-12 rounded-xl bg-gray-700/50 hover:bg-emerald-500/20 text-gray-400 hover:text-emerald-500 transition-all duration-300 flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-emerald-500/20"
+              >
+                <Icon className="w-6 h-6" />
+              </button>
+              <div className="absolute left-full ml-4 px-3 py-1 bg-gray-800 text-emerald-500 text-sm rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 whitespace-nowrap border border-emerald-500/20 shadow-lg shadow-emerald-500/5">
+                {tooltip}
+                <div className="absolute left-0 top-1/2 -translate-x-1 -translate-y-1/2 w-2 h-2 bg-gray-800 border-l border-t border-emerald-500/20 transform -rotate-45"></div>
+              </div>
+            </div>
+          ))}
+          <div className="absolute -left-[2px] top-0 w-[2px] h-full bg-gradient-to-b from-emerald-500/0 via-emerald-500/50 to-emerald-500/0"></div>
+          <div className="absolute -z-10 inset-0 rounded-2xl bg-gradient-to-r from-emerald-500/5 to-transparent"></div>
+        </div>
+      </div>
       <div className="login-form-container">
         <div className="login-form">
           <div className="welcome-text">

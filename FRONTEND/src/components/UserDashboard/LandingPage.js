@@ -565,7 +565,7 @@ const LandingPage = () => {
           </div>
 
           {/* Features Section */}
-          <section ref={featuresRef} className="container mx-auto px-4 py-20">            <div className="text-center space-y-4 mb-12">
+          <section ref={featuresRef} className="container mx-auto mt-20 px-4 pt-24">            <div className="text-center space-y-4 mb-12">
               <h2 className="text-4xl font-bold">Why Choose Us</h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
                 Experience the perfect blend of professional guidance, premium equipment, and motivating atmosphere to achieve your fitness goals.
@@ -579,7 +579,7 @@ const LandingPage = () => {
             </div>
           </section>
          {/*service section*/}
-         <div ref={servicesRef} className="container mx-auto px-4 py-20">        <div className="text-center space-y-4 mb-12">
+         <div ref={servicesRef} className="container mx-auto mt-20 px-4 pt-24">        <div className="text-center space-y-4 mb-12">
            <h2 className="text-4xl font-bold animate-fade-in-up">Our Services</h2>
            <p className="text-gray-400 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
              Comprehensive fitness solutions tailored to help you achieve your personal goals.
@@ -595,7 +595,7 @@ const LandingPage = () => {
         </div>
 
         {/* Contact Section */}
-        <section ref={contactRef} className="container mx-auto px-4 py-20">        <div className="text-center space-y-4 mb-12">
+        <section ref={contactRef} className="container mx-auto mt-20 px-4 pt-24">        <div className="text-center space-y-4 mb-12">
           <h2 className="text-4xl font-bold animate-fade-in-up">Get in Touch</h2>
           <p className="text-gray-400 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Ready to start your fitness journey? Contact us today.

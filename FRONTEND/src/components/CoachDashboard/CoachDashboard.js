@@ -116,6 +116,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { FaUser, FaSignOutAlt, FaEllipsisV} from "react-icons/fa";
 import {
   Bell,
   ChevronDown,
@@ -232,7 +233,15 @@ function CoachDashboard() {
        navigate(`/UserDetails/${coach.email}`); // Navigate to ProfileCard page with email
      }
    };
-
+   const handleLogout = () => {
+    // Clear session storage or local storage
+    sessionStorage.clear();
+  
+    // Optional: Reset state (if using a global state management solution)
+  
+    // Redirect to login or home page
+    navigate("/login"); // Replace '/login' with your desired route
+  };
   return (
     <div className="flex h-screen bg-[#111827] text-white">
       <Sidebar className="border-r border-[#374151] bg-[rgba(31,41,55,0.5)]">
@@ -269,31 +278,39 @@ function CoachDashboard() {
             {(isOpen, setIsOpen) => (
               <>
                 <DropdownMenuTrigger onClick={() => setIsOpen(!isOpen)}>
-                  <Button className="h-8 w-8 p-0 rounded-full overflow-hidden border-2 border-[#10B981] hover:border-[#059669] transition-colors duration-200">
-                    <img
-                      src="/placeholder.svg?height=32&width=32"
-                      alt="Coach avatar"
-                      className="rounded-full"
-                    />
-                  </Button>
+                <Button className="h-8 w-8 p-0 rounded-full overflow-hidden border-2 border-[#10B981] hover:border-[#059669] transition-colors duration-200 relative">
+  <img
+    src="/placeholder.svg?height=32&width=32"
+    alt="Coach avatar"
+    className="rounded-full"
+  />
+  <FaEllipsisV className="absolute bottom-1 right-1 text-[#10B981] hover:text-[#059669] transition-colors duration-200" />
+</Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent isOpen={isOpen}>
-                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                  <DropdownMenuSeparator className="bg-[#374151]" />
-                  <DropdownMenuItem
-                    className="hover:bg-[rgba(55,65,81,0.4)] text-[#D1D5DB] hover:text-white transition-colors duration-200"
-                    onClick={goToProfile}
-                  >
-                    Profile
-                  </DropdownMenuItem>
-                  
-                  <DropdownMenuItem
-                    className="hover:bg-[rgba(55,65,81,0.4)] text-[#D1D5DB] hover:text-white transition-colors duration-200"
-                    onClick={() => navigate('/logout')}
-                  >
-                    Logout
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
+  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+  <DropdownMenuSeparator className="bg-[#374151]" />
+  
+  <DropdownMenuItem
+    className="hover:bg-[rgba(55,65,81,0.4)] text-[#D1D5DB] hover:text-white transition-colors duration-200 flex items-center"
+    onClick={goToProfile}
+  >
+    <FaUser className="mr-2" />
+    Profile
+  </DropdownMenuItem>
+  
+  
+  
+
+  
+  <DropdownMenuItem
+  className="hover:bg-[rgba(55,65,81,0.4)] text-[#D1D5DB] hover:text-white transition-colors duration-200 flex items-center"
+  onClick={handleLogout}
+>
+  <FaSignOutAlt className="mr-2" />
+  Logout
+</DropdownMenuItem>
+</DropdownMenuContent>
               </>
             )}
           </DropdownMenu>
@@ -347,7 +364,7 @@ function CoachDashboard() {
              </section> */}
            </main>
            <div className="fixed bottom-8 right-8">
-             <div className="bg-[rgba(31,41,55,0.5)] hover:bg-[rgba(55,65,81,0.4)] p-4 rounded-lg shadow-lg border border-[#374151] max-w-sm">
+             <div className="bg-[rgba(31,41,55)] hover:bg-[rgba(63,73,90,0.4)] p-4 rounded-lg shadow-lg border border-[#374151] max-w-sm">
                <h3 className="text-xl font-bold mb-2 text-white">Ready to Coach?</h3>
                <p className="text-[#9CA3AF] mb-4">Launch your coaching session with just one click. Our intuitive interface ensures a smooth experience for both you and your clients.</p>
                <Button 

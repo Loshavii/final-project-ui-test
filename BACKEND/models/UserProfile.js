@@ -21,7 +21,7 @@ const ProfileSchema = new Schema({
   bloodPressure: { type: String },
   heartRate: { type: Number },
   bloodSugarLevels: { type: String },
-  contactOption: { type: String, enum: ['chat', 'video'], required: true },
+  // contactOption: { type: String, enum: ['chat', 'video'], required: true },
   coachEmail: { type: String, required: true },
   status: { type: String, enum: ['pending', 'approved', 'declined'], default: 'pending' },
 }, { timestamps: true });

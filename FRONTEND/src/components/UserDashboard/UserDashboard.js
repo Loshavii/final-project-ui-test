@@ -165,6 +165,8 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { House, LogIn, MousePointer2,Signpost} from 'lucide-react';
+
 import '../CSS/UserDashboard.css';
 import { useNavigate } from 'react-router-dom';
 import { FaUserCircle } from 'react-icons/fa';
@@ -202,9 +204,9 @@ const Dashboard = () => {
           const profile = profileResponse.data;
           setProfileData(profile);
   
-          if (profile.contactOption) {
-            sessionStorage.setItem('contactOption', profile.contactOption);
-          }
+          // if (profile.contactOption) {
+          //   sessionStorage.setItem('contactOption', profile.contactOption);
+          // }
   
           const paymentResponse = await axios.get(`http://localhost:2003/api/payments/payment-get/${userId}`, {
             headers: {
@@ -212,7 +214,7 @@ const Dashboard = () => {
             }
           });
   
-          console.log('Payment Response:', paymentResponse.data);
+          // console.log('Payment Response:', paymentResponse.data);
   
           // Convert payment status to lowercase to match conditions
           const status = paymentResponse.data.paymentStatus.toLowerCase();
@@ -248,10 +250,43 @@ const Dashboard = () => {
     navigate('/coach');
   };
 
-  const contactOption = sessionStorage.getItem('contactOption'); // Retrieve contactOption from session storage
+  // const contactOption = sessionStorage.getItem('contactOption'); // Retrieve contactOption from session storage
 
   return (
     <div className="udashboard-container">
+      <div className="fixed left-2 top-1/2 -translate-y-1/2">
+  <div className="relative flex flex-col space-y-4 bg-gray-800/30 p-1 rounded-2xl backdrop-blur-lg border-l-4 border-emerald-500/50 shadow-lg shadow-emerald-500/5">
+    {[
+      { icon: House, path: '/', tooltip: 'Home' },
+      { icon: MousePointer2, path: '/register-select', tooltip: 'Register' },
+      { icon: Signpost, path: '/register-user', tooltip: 'Sign Up' },
+      {
+        icon: LogIn,
+        tooltip: 'Logout',
+        onClick: () => {
+          sessionStorage.clear(); // Clear session storage
+          navigate('/'); // Redirect to login page
+        },
+      },
+    ].map(({ icon: Icon, path, tooltip, onClick }, index) => (
+      <div key={index} className="group relative">
+        <button
+          onClick={onClick || (() => navigate(path))}
+          className="p-3 w-12 h-12 rounded-xl bg-gray-700/50 hover:bg-emerald-500/20 text-gray-400 hover:text-emerald-500 transition-all duration-300 flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-emerald-500/20"
+        >
+          <Icon className="w-6 h-6" />
+        </button>
+        <div className="absolute left-full ml-4 px-3 py-1 bg-gray-800 text-emerald-500 text-sm rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 whitespace-nowrap border border-emerald-500/20 shadow-lg shadow-emerald-500/5">
+          {tooltip}
+          <div className="absolute left-0 top-1/2 -translate-x-1 -translate-y-1/2 w-2 h-2 bg-gray-800 border-l border-t border-emerald-500/20 transform -rotate-45"></div>
+        </div>
+      </div>
+    ))}
+    <div className="absolute -left-[2px] top-0 w-[2px] h-full bg-gradient-to-b from-emerald-500/0 via-emerald-500/50 to-emerald-500/0"></div>
+    <div className="absolute -z-10 inset-0 rounded-2xl bg-gradient-to-r from-emerald-500/5 to-transparent"></div>
+  </div>
+</div>
+
       {/* Left Side - Profile Section */}
       <div className="uprofile-section">
         <h2>My Profile</h2>
